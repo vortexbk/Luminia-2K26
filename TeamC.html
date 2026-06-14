@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team C</title>
+    <style>
+            body {
+                background-image: url('bg luminia web.jpg');
+                background-size: fixed;
+                text-align: center;
+                font-family: Arial, sans-serif;
+            }
+        h1 {
+            color: #FF6000;
+            font-size: 50px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        p {
+            color: #FFA559;
+            font-size: 20px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .btn {
+    position: relative;
+    padding: 10px 20px;
+    border: 2px solid #B43F3F;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background: white;
+    color: black;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #B43F3F;
+    transition: width 0.5s ease;
+    z-index: -1;
+}
+
+.btn:hover::before {
+    width: 100%;
+}
+
+.btn:hover {
+    color: white;
+}
+        </style>
+        
+</head>
+<body>
+    <h1>
+        Coming Soon
+    </h1>
+    <p>
+        Stay tuned for updates on Team C's performance in Luminia 2K26!
+    </p>
+    <p>
+        Wait for team, leaders and members to be announced soon    
+    </p>
+    <form action="index.html">
+        <button class="btn">
+            Home
+        </button>
+    </form>
+</body>
+</html>
