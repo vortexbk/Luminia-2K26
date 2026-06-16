@@ -2,73 +2,391 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team B</title>
+    <meta name="key word" content="Luminia 2K26">
+    <title>Luminia 2K26</title>
     <style>
-        body {
-    background-image: url('bg luminia web.jpg');
-    background-size: fixed;
-    text-align: center;
-   }
-        
-        h1 {
-            color: #FF6000;
-            font-size: 50px;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        }
-        p {
-            color: #FFA559;
-            font-size: 20px;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        }
-        .btn {
-    position: relative;
-    padding: 10px 20px;
-    border: 2px solid #B43F3F;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    background: white;
-    color: black;
-    cursor: pointer;
-    overflow: hidden;
-    z-index: 1;
+        body{
+    visibility:hidden;
 }
 
-.btn::before {
-    content: "";
-    position: absolute;
+body.loaded{
+    visibility:visible;
+}
+  body{
+    background-image: url('bg luminia web.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+}
+
+  #headertxt {
+    color: #FF6000;
+    font-size: 100px;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 5px solid #FFA559;
+    font-family: fantasy;
+    width: 0;
+    animation:
+        typing 3s steps(12, end) infinite alternate,
+        blink 0.7s step-end infinite;
+  }
+
+ @keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 12ch;
+    }
+  }
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+  }
+  #moto {
+    color: #FFA559;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    position: relative; 
+    top: -100px;
+    left: 700px;
+    animation:
+        typing 3s steps(22, end) infinite alternate,
+        blink 0.5s step-end infinite;
+   }  
+    @keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 12ch;
+    }
+  }
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}      
+
+  #midad {
+    color: #FFA559;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #000000;
+   }
+
+  #p1{
+    color: #FFE6C7;
+    font-family: monospace;
+    font-size: larger;
+    position: relative;
+    top: -50px;
+   }
+
+.container{
+    display: flex;
+    gap: 40px;
+}
+
+   .b{
+    color: #ffffff;
+    font-family: monospace;
+    font-size: 20px;
+    position: relative;
+    top: 0px;
+
+}
+#btna,
+#btnb,
+#btnc,
+#btnd{
+    background: #B43F3F;
+    width: 100px;
+    height: 50px;
+    border-radius: 10%;
+    left: 400px;
+    position: relative;
+    text-align: center;
+    border-width: 0px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+   
+   #btna:hover,
+   #btnb:hover,
+   #btnc:hover,
+   #btnd:hover{
+    position: relative;
+    top: 5px;
+    left: 400px;
+    background: #FFA559;
+    border-radius: 10%;
+
+   }
+   h4{
+    color: #f8b57d;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    text-align: left;
+    
+   }
+   h2{
+    color: #ff7300;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+   }
+   #logo{
+    border-radius: 10%; 
+    border: 5px solid #B43F3F;
+    position: relative;
+
+}
+    #mm{
+    color: #6f6e6e;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebu                    
+    }
+    #last{
+    color: #6f6e6e;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+}
+#hr2,#hr3,#hr4{
+    border: 5px solid #FFA559;
+}
+#inf{
+    color: #f8b57d;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 35px;
+    text-shadow: #f8b57d 2px 2px 4px;
+    position: relative;
+    left: -500px;
+}
+#last1{
+    color: #f8b57d;
+    font-family: monospace;
+    font-size: 20px;
+    left: -150px;
+    position: relative;
+}
+
+/* ---------- INTRO OVERLAY (added exactly from provided code) ---------- */
+.intro-overlay {
+    position: fixed;
     top: 0;
     left: 0;
-    width: 0;
-    height: 100%;
-    background: #B43F3F;
-    transition: width 0.5s ease;
-    z-index: -1;
-}
-
-.btn:hover::before {
     width: 100%;
+    height: 100%;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    animation: fadeOutContainer 0.001s forwards 8s;
 }
 
-.btn:hover {
-    color: white;
+.intro-logo {
+    text-align: center;
+    animation: glow 1s forwards 5s, blurOut 1s forwards 7s;
 }
-        </style>
-        
+
+.intro-line1 {
+    color: #E50914;
+    font-size: 120px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    letter-spacing: 2px;
+}
+
+.intro-line2 {
+    color: #E50914;
+    font-size: 60px;
+    font-family: Arial, sans-serif;
+    letter-spacing: 3px;
+}
+
+.intro-logo span {
+    opacity: 0;
+    display: inline-block;
+}
+
+/* LUMINIA letters */
+.il1 { animation: introShow 0.4s forwards; }
+.il2 { animation: introShow 0.4s forwards 0.4s; }
+.il3 { animation: introShow 0.4s forwards 0.8s; }
+.il4 { animation: introShow 0.4s forwards 1.2s; }
+.il5 { animation: introShow 0.4s forwards 1.6s; }
+.il6 { animation: introShow 0.4s forwards 2.0s; }
+.il7 { animation: introShow 0.4s forwards 2.4s; }
+
+/* 2K26 */
+.in1 { animation: introShow 0.4s forwards 3.2s; }
+.in2 { animation: introShow 0.4s forwards 3.6s; }
+.in3 { animation: introShow 0.4s forwards 4.0s; }
+.in4 { animation: introShow 0.4s forwards 4.4s; }
+
+@keyframes introShow {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #E50914;
+    }
+    to {
+        text-shadow: 0 0 20px #E50914, 0 0 50px #E50914, 0 0 100px #E50914, 0 0 200px #E50914;
+    }
+}
+
+@keyframes blurOut {
+    from {
+        opacity: 1;
+        filter: blur(0);
+    }
+    to {
+        opacity: 0;
+        filter: blur(50px);
+    }
+}
+
+@keyframes fadeOutContainer {
+    from {
+        visibility: visible;
+    }
+    to {
+        visibility: hidden;
+        display: none;
+    }
+}
+/* end of intro styles */
+
+       </style>
 </head>
 <body>
-    <h1>
-        Coming Soon
-    </h1>
-    <p>
-        Stay tuned for updates on Team B's performance in Luminia 2K26!
-    </p>
-    <p>
-        Wait for team, leaders and members to be announced soon    
-    </p>
-    <form action="index.html">
-        <button class="btn">
-            Home
-        </button>
-    </form>
+
+<!-- INTRO SECTION - added exactly as provided, just with unique class names to avoid conflict -->
+<div class="intro-overlay" id="introOverlay">
+    <div class="intro-logo">
+        <div class="intro-line1">
+            <span class="il1">L</span>
+            <span class="il2">U</span>
+            <span class="il3">M</span>
+            <span class="il4">I</span>
+            <span class="il5">N</span>
+            <span class="il6">I</span>
+            <span class="il7">A</span>
+        </div>
+        <div class="intro-line2">
+            <span class="in1">2</span>
+            <span class="in2">K</span>
+            <span class="in3">2</span>
+            <span class="in4">6</span>
+        </div>
+    </div>
+</div>
+
+<!-- MAIN CONTENT (unchanged) -->
+    <h1 id="headertxt">
+    Luminia 2K26 
+</h1>
+<p id="moto">
+    Iluminate Inspire Create
+</p>
+<p id="p1">
+    Luminia 2K26, the festival organized by the 24th batch union
+    <b id="midad">Midad Mates .</b>
+</p>
+<div class="container">
+<br>
+<br>
+ <form action="team1.html">
+    <button id="btna">
+        Team A
+    </button>
+ </form>
+<br>
+<br>
+<br>
+<br>
+ <form action="team2.html">
+    <button id="btnb">
+        Team B
+    </button>
+ </form>
+<br>
+<br>
+<br>
+<br>
+ <form action="TeamC.html">
+    <button id="btnc">
+    Team C
+    </button>
+ </form>
+<br>
+<br>
+<br>
+<br>
+ <form action="TeamD.html">
+    <button id="btnd">
+        Team D
+    </button>
+ </form>
+<br>
+<br>
+</div>
+<br>
+<br>
+<hr>
+<h2>
+    About 
+</h2>
+<h4>
+    Luminia 2K26 is a vibrant and inspiring literature fest organized by the Class Union of Midad mates 24th Batch at Darunnajath Islamic Complex. The fest celebrates the beauty of language, creativity, and intellectual expression by bringing together students through various literary and cultural activities. Designed to nurture talent and encourage a love for literature, Luminia 2K26 serves as a platform for young minds to share ideas, showcase their skills, and create lasting memories. With enthusiasm, unity, and a passion for learning, the Midad mates 24th Batch proudly presents this event as a remarkable chapter in the literary journey of the college community.
+</h4>
+<img src="Untitled_design__2__page-0001-removebg-preview.png" alt="Luminia 2K26" width="600" height="600" id="logo">
+<hr id="hr3">
+<p id="mm">
+    Organized by midad mates 24th batch
+</p>
+<hr id="hr2">
+<p id="inf">
+    Luminia 2K26
+</p>
+<br>
+<br>
+<p id="last1">
+    Join us in celebrating the power of words and the joy of creativity at Luminia 2K26.
+</p>
+<br>
+<br>
+<br>
+<br>
+<hr id="hr4">
+<h6 id="last">
+    © 2024 Luminia 2K26. All rights reserved. | Designed by Aazim,Najmul
+</h6>
+
+<script>
+window.addEventListener("load", function () {
+
+    document.body.classList.add("loaded");
+
+    setTimeout(function () {
+        document.getElementById("introOverlay").style.display = "none";
+    }, 8200);
+
+});
+</script>
 </body>
 </html>
