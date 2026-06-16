@@ -165,9 +165,130 @@
     left: -150px;
     position: relative;
 }
+
+/* ---------- INTRO OVERLAY (added exactly from provided code) ---------- */
+.intro-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    animation: fadeOutContainer 0.001s forwards 8s;
+}
+
+.intro-logo {
+    text-align: center;
+    animation: glow 1s forwards 5s, blurOut 1s forwards 7s;
+}
+
+.intro-line1 {
+    color: #E50914;
+    font-size: 120px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    letter-spacing: 2px;
+}
+
+.intro-line2 {
+    color: #E50914;
+    font-size: 60px;
+    font-family: Arial, sans-serif;
+    letter-spacing: 3px;
+}
+
+.intro-logo span {
+    opacity: 0;
+    display: inline-block;
+}
+
+/* LUMINIA letters */
+.il1 { animation: introShow 0.4s forwards; }
+.il2 { animation: introShow 0.4s forwards 0.4s; }
+.il3 { animation: introShow 0.4s forwards 0.8s; }
+.il4 { animation: introShow 0.4s forwards 1.2s; }
+.il5 { animation: introShow 0.4s forwards 1.6s; }
+.il6 { animation: introShow 0.4s forwards 2.0s; }
+.il7 { animation: introShow 0.4s forwards 2.4s; }
+
+/* 2K26 */
+.in1 { animation: introShow 0.4s forwards 3.2s; }
+.in2 { animation: introShow 0.4s forwards 3.6s; }
+.in3 { animation: introShow 0.4s forwards 4.0s; }
+.in4 { animation: introShow 0.4s forwards 4.4s; }
+
+@keyframes introShow {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #E50914;
+    }
+    to {
+        text-shadow: 0 0 20px #E50914, 0 0 50px #E50914, 0 0 100px #E50914, 0 0 200px #E50914;
+    }
+}
+
+@keyframes blurOut {
+    from {
+        opacity: 1;
+        filter: blur(0);
+    }
+    to {
+        opacity: 0;
+        filter: blur(50px);
+    }
+}
+
+@keyframes fadeOutContainer {
+    from {
+        visibility: visible;
+    }
+    to {
+        visibility: hidden;
+        display: none;
+    }
+}
+/* end of intro styles */
+
        </style>
 </head>
 <body>
+
+<!-- INTRO SECTION - added exactly as provided, just with unique class names to avoid conflict -->
+<div class="intro-overlay" id="introOverlay">
+    <div class="intro-logo">
+        <div class="intro-line1">
+            <span class="il1">L</span>
+            <span class="il2">U</span>
+            <span class="il3">M</span>
+            <span class="il4">I</span>
+            <span class="il5">N</span>
+            <span class="il6">I</span>
+            <span class="il7">A</span>
+        </div>
+        <div class="intro-line2">
+            <span class="in1">2</span>
+            <span class="in2">K</span>
+            <span class="in3">2</span>
+            <span class="in4">6</span>
+        </div>
+    </div>
+</div>
+
+<!-- MAIN CONTENT (unchanged) -->
     <h1 id="headertxt">
     Luminia 2K26 
 </h1>
@@ -247,5 +368,23 @@
 <h6 id="last">
     © 2024 Luminia 2K26. All rights reserved. | Designed by Aazim,Najmul
 </h6>
+
+<script>
+    // simple script to ensure intro disappears after animation completes without affecting any original functionality
+    (function() {
+        var overlay = document.getElementById('introOverlay');
+        if (overlay) {
+            setTimeout(function() {
+                if (overlay) {
+                    overlay.style.display = 'none';
+                }
+            }, 8200);
+        }
+        // ensure body scroll is re-enabled after intro (original page had no overflow restrictions, but just in case)
+        setTimeout(function() {
+            document.body.style.overflow = '';
+        }, 8200);
+    })();
+</script>
 </body>
 </html>
